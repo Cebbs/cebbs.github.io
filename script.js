@@ -5,11 +5,12 @@ var admin;
 
 function enterRoomName() {
 	roomName=document.getElementById('room-name').value;
+	landing = document.getElementById('landing').value;
 	if(!validateForm(roomName)) {
 		alert("Enter a name bud.");
 	}
 	else {
-		window.open("moredetails.html", '_self', false);
+		landing.style.visibility = 'hidden';
 	}
 }
 
