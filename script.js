@@ -1,18 +1,16 @@
 var roomName;
 var userName;
-var roomSize;
+var roomSize = 10;
 var admin;
+var skipCount = 0;
 
 function enterRoomName() {
 	roomName=document.getElementById('room-name').value;
-	landing = document.getElementById("landing");
-	moreDetails = document.getElementById("more-details");
 	if(!validateForm(roomName)) {
 		alert("Enter a name bud.");
 	}
 	else {
-		landing.style.display = "none";
-		moreDetails.style.display = "block";
+		window.open("moredetails.html", '_self', false);
 	}
 }
 
@@ -36,4 +34,27 @@ function moreDetails() {
 //checks to ensure a value has been entered
 function validateForm(input) {
 	return !(input == null || input == "");
+}
+
+
+// initiates, continues, or concludes a skip vote
+function skipVote() {
+	
+	if (skipCount == 0) {
+		skipCount++;
+		var temp = (skipCount / roomSize) * 100;
+		document.getElementById('skip-line').style.marginLeft = temp + "%";
+	}
+	else {
+		skipCount++;
+		if (skipCount > roomSize / 2) {
+			// skip this song
+			skipCount = 0;
+			document.getElementById('skip-line').style.marginLeft = "0%";
+		}
+		else {
+			var temp = (skipCount / roomSize) * 100;
+			document.getElementById('skip-line').style.marginLeft = temp + "%";
+		}
+	}
 }
