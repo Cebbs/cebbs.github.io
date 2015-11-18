@@ -5,11 +5,14 @@ var admin;
 
 function enterRoomName() {
 	roomName=document.getElementById('room-name').value;
+	landing = document.getElementById("landing");
+	moreDetails = document.getElementById("more-details");
 	if(!validateForm(roomName)) {
 		alert("Enter a name bud.");
 	}
 	else {
-		window.open("moredetails.html", '_self', false);
+		landing.style.display = "none";
+		moreDetails.style.display = "block";
 	}
 }
 
