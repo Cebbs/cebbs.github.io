@@ -1,7 +1,8 @@
 var roomName;
 var userName;
-var roomSize;
+var roomSize = 10;
 var admin;
+var skipCount = 0;
 
 var currentSong;
 var songQueue;
@@ -14,11 +15,14 @@ var cantClick;
 
 function enterRoomName() {
 	roomName=document.getElementById('room-name').value;
+	landing = document.getElementById("landing");
+	moreDetail = document.getElementById("more-details");
 	if(!validateForm(roomName)) {
 		alert("Enter a name bud.");
 	}
 	else {
-		window.open("moredetails.html", '_self', false);
+		landing.style.display = "none";
+		moreDetail.style.display = "block";
 	}
 }
 
@@ -34,7 +38,7 @@ function moreDetails() {
 		alert("Enter a name bud.");
 	}
 	else {
-		//open the next window
+		window.open("player.html", '_self', false);//open the next window
 	}
 
 }
@@ -43,6 +47,7 @@ function moreDetails() {
 function validateForm(input) {
 	return !(input == null || input == "");
 }
+
 
 //test function
 function uploadSongs() {
@@ -104,5 +109,27 @@ function nextSong() {
 		nextId.innerHTML = "";
 		idToDelete++;
 		console.log("idToDelete: " + idToDelete);
+	}
+}
+
+// initiates, continues, or concludes a skip vote
+function skipVote() {
+	
+	if (skipCount == 0) {
+		skipCount++;
+		var temp = (skipCount / roomSize) * 100;
+		document.getElementById('skip-line').style.marginLeft = temp + "%";
+	}
+	else {
+		skipCount++;
+		if (skipCount > roomSize / 2) {
+			// skip this song
+			skipCount = 0;
+			document.getElementById('skip-line').style.marginLeft = "0%";
+		}
+		else {
+			var temp = (skipCount / roomSize) * 100;
+			document.getElementById('skip-line').style.marginLeft = temp + "%";
+		}
 	}
 }

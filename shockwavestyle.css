@@ -27,6 +27,7 @@
 }
 
 #more-details {
+	display: none;
 	margin-top: 17vh;
 	width: 100vh;
 }
@@ -54,8 +55,9 @@
 }
 
 #top-div {
-	height: 20%;
+	height: 10%;
 	border-style: solid;
+	position: relative;
 }
 
 #music-player {
@@ -74,4 +76,24 @@
 	position: absolute;
 	right: 0;
 	bottom: 0;
+}
+
+#skip-box {
+	border-style: solid;
+	height: 50%;
+	width: 30%;
+}
+
+#skip-button {
+	position: absolute;
+	width: 10%;
+	right: 0;
+	bottom: 0;
+}
+
+#skip-line {
+	margin-left: 0%;
+	border-style: solid;
+	width: .5px;
+	height: 100%;
 }
