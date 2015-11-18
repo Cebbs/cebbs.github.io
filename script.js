@@ -5,7 +5,7 @@ var admin;
 var skipCount = 0;
 
 function enterRoomName() {
-	roomName=document.getElementById('room-name').value;
+	roomName=document.getElementById("room-name").value;
 	landing = document.getElementById("landing");
 	moreDetail = document.getElementById("more-details");
 	if(!validateForm(roomName)) {
@@ -39,6 +39,9 @@ function validateForm(input) {
 	return !(input == null || input == "");
 }
 
+// Displays roomName
+function displayRoomName() {
+    document.getElementById("room-name-display").innerHTML = "RYAN"; //this.roomName;
 
 // initiates, continues, or concludes a skip vote
 function skipVote() {
