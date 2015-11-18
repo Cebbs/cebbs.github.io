@@ -123,7 +123,7 @@ function skipVote() {
 	if (skipCount == 0) {
 		skipCount++;
 		var temp = (skipCount / roomSize) * 100;
-		document.getElementById('skip-line').style.marginLeft = temp + "%";
+		document.getElementById('skip-line').style.width = temp + "%";
 		document.getElementById('skip-box').style.display = "block";
 		document.getElementById('skip-line').style.display = "block";
 	}
@@ -134,11 +134,11 @@ function skipVote() {
 			skipCount = 0;
 			document.getElementById('skip-box').style.display = "none";
 			document.getElementById('skip-line').style.display = "none";
-			document.getElementById('skip-line').style.marginLeft = "0%";
+			document.getElementById('skip-line').style.width = "0%";
 		}
 		else {
 			var temp = (skipCount / roomSize) * 100;
-			document.getElementById('skip-line').style.marginLeft = temp + "%";
+			document.getElementById('skip-line').style.width = temp + "%";
 		}
 	}
 }
