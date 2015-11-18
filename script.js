@@ -88,3 +88,11 @@ function displayChatBoxText(chatText) {
 	para.appendChild(node);
 	chatBox.appendChild(para);
 }
+
+
+// if enter pressed, submit text
+function enterSubmit() {
+	if (event.keyCode == 13) {
+		chatTextSubmit();
+	}
+}
