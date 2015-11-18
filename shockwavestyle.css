@@ -27,6 +27,7 @@
 }
 
 #more-details {
+	display: none;
 	margin-top: 17vh;
 	width: 100vh;
 }
