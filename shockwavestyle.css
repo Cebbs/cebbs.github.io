@@ -53,11 +53,17 @@
 	border-style: solid;
 }
 
+#top-div {
+	height: 20%;
+	border-style: solid;
+}
+
 #music-player {
-	height: 40%;
+	height: 55%;
+	border-style: solid;
 }
 
 #song-queue {
-	height: 50%;
+	height: 25%;
 	border-style: solid; 
 }
