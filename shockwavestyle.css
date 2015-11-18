@@ -84,6 +84,17 @@ body {
 	box-shadow: 0 0 10px #3D57A3;
 }
 
+#text-input {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+}
+
+#text-input:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
 #everything-else {
 	height: 85vh;
 	border-style: none;
