@@ -69,3 +69,22 @@ function skipVote() {
 		}
 	}
 }
+
+
+
+// Sends text from textbox to chatbox
+function chatTextSubmit() {
+	var chatText = document.getElementById('text-input').value;
+	chatText.concat("<br>");
+	displayChatBoxText(chatText);
+	document.getElementById('text-input').value = "";
+}
+
+// Displays chat box text
+function displayChatBoxText(chatText) {
+	var chatBox = document.getElementById("the-chat");
+	var para = document.createElement("p");
+	var node = document.createTextNode(chatText);
+	para.appendChild(node);
+	chatBox.appendChild(para);
+}

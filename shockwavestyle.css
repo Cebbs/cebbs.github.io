@@ -50,6 +50,7 @@
 }
 
 #chat-box{
+	position: relative;
 	height: 85vh;
 	border-style: solid;
 }
@@ -93,4 +94,16 @@
 	border-style: solid;
 	width: .5px;
 	height: 100%;
+}
+
+#chat-text-submit {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#text-box {
+	position: absolute;
+	left: 0;
+	bottom: 0;
 }
