@@ -68,6 +68,7 @@ body {
 }
 
 #chat-box{
+	overflow-y: auto;
 	position: relative;
 	margin-top: 8.5vh;
 	height: 69vh;
@@ -98,10 +99,18 @@ body {
 }
 
 #add-song-button {
-	float: right;
-	position: absolute;
-	right: 0;
-	bottom: 0;
+
+}
+
+#add-from-link {
+	width: 30%;
+	display: inline;
+}
+
+#link-submit {
+	background-color: #3D57A3;
+	color: #E5E4E2;
+	display: inline;
 }
 
 #skip-box {

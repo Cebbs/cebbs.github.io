@@ -26,11 +26,14 @@
 					<div id="song-queue">
 						<div id="actual-queue">
 						</div>
-						<button class="btn btn-lg" type="submit" id="add-song-button" onchange="uploadSongs()">
-							<input type="file" id="file-upload" multiple max="7" accept="audio/*"></button>
-						<button type="button" id="add-link" onclick="addLink()">Add from link</button>
-						<audio id="uploaded-song"></audio>
 					</div>
+					<button class="btn btn-lg" type="submit" id="add-song-button" onchange="uploadSongs()">
+							<input type="file" id="file-upload" multiple accept="audio/*"></button>
+					<div id="link">
+						<input type="text" class="form-control input-sm" id="add-from-link" placeholder="Upload song from link">
+						<button class="btn btn-md" type="submit" id="link-submit" onclick="addLink()">Upload!</button>
+					</div>
+					<audio id="uploaded-song"></audio>
 				</div>
 				<div class="col-lg-2" id="chat-box">
 					<div id="the-chat">

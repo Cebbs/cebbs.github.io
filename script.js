@@ -55,7 +55,7 @@ function displayRoomName() {
 
 //test function
 function uploadSongs() {
-	if(cantClick === 1) {
+	if(cantClick > 0) {
 		alert("You don't want to upload twice.");
 	}
 	else {
@@ -167,5 +167,27 @@ function displayChatBoxText(chatText) {
 function enterSubmit() {
 	if (event.keyCode == 13) {
 		chatTextSubmit();
+	}
+}
+
+function addLink() {
+	if(cantClick > 0) {
+		alert("You don't want to upload twice.");
+	}
+	var theLink = document.getElementById("add-from-link").value;
+	else if(!validateForm(theLink)) {
+		alert("Enter a link bud.");
+	}
+	else if(theLink != "youtube.com/2dFE") {
+		alert("Enter the right link bud")
+	}
+	else {
+		document.querySelector('audio').src = "The Morning.mp3";
+		audio = document.getElementById("uploaded-song");
+		audio.play();
+		var player = document.getElementById("music-player");
+		player.innerHTML = "The Weeknd - The Morning";
+		cantClick++;
+		document.getElementById('add-from-link').value = "";
 	}
 }
