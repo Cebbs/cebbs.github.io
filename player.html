@@ -24,8 +24,11 @@
 					<div id="music-player">
 					</div>
 					<div id="song-queue">
-						<button class="btn btn-default" type="submit" id="add-song-button" onchange="songShit()"><input type="file" id="file-upload" multiple accept="audio/*"></button>
-						<!--<input type="file" id="file-upload" onchange="songShit()" accept="audio/*">-->
+						<div id="actual-queue">
+						</div>
+						<button class="btn btn-lg" type="submit" id="add-song-button" onchange="uploadSongs()">
+							<input type="file" id="file-upload" multiple accept="audio/*"></button>
+						<audio id="uploaded-song"></audio>
 					</div>
 				</div>
 				<div class="col-lg-2" id="chat-box">
