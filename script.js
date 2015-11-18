@@ -171,10 +171,10 @@ function enterSubmit() {
 }
 
 function addLink() {
+	var theLink = document.getElementById("add-from-link").value;
 	if(cantClick > 0) {
 		alert("You don't want to upload twice.");
 	}
-	var theLink = document.getElementById("add-from-link").value;
 	else if(!validateForm(theLink)) {
 		alert("Enter a link bud.");
 	}
