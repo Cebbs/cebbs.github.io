@@ -1,4 +1,4 @@
-var roomName = "RoomName";
+var roomName = "Test Room";
 var userName;
 var roomSize = 10;
 var admin;
