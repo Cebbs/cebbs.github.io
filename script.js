@@ -1,5 +1,5 @@
 var roomName = "Test Room";
-var userName;
+var userName = "User 1";
 var roomSize = 10;
 var admin;
 var skipCount = 0;
@@ -147,7 +147,7 @@ function skipVote() {
 
 // Sends text from textbox to chatbox
 function chatTextSubmit() {
-	var chatText = document.getElementById('text-input').value;
+	var chatText = userName + ":" + document.getElementById('text-input').value;
 	chatText.concat("<br>");
 	displayChatBoxText(chatText);
 	document.getElementById('text-input').value = "";
