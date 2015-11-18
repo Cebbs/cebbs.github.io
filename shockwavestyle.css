@@ -69,7 +69,7 @@ body {
 
 #chat-box{
 	position: relative;
-	margin-top: 7%;
+	margin-top: 8.5vh;
 	height: 69vh;
 	border-style: solid;
 }
