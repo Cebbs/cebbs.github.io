@@ -92,6 +92,7 @@ body {
 	position: relative;
 	height: 25%;
 	border-style: solid; 
+	overflow-y: auto;
 }
 
 #add-song-button {

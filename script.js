@@ -60,6 +60,7 @@ function uploadSongs() {
 	}
 	else {
 		cantClick = 1;
+		document.getElementById("file-upload").readOnly = true;
 		queueSpot = 0;
 		idToDelete = 0;
 
