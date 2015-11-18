@@ -6,11 +6,14 @@ var skipCount = 0;
 
 function enterRoomName() {
 	roomName=document.getElementById('room-name').value;
+	landing = document.getElementById("landing");
+	moreDetail = document.getElementById("more-details");
 	if(!validateForm(roomName)) {
 		alert("Enter a name bud.");
 	}
 	else {
-		window.open("moredetails.html", '_self', false);
+		landing.style.display = "none";
+		moreDetail.style.display = "block";
 	}
 }
 
@@ -26,7 +29,7 @@ function moreDetails() {
 		alert("Enter a name bud.");
 	}
 	else {
-		//open the next window
+		window.open("player.html", '_self', false);//open the next window
 	}
 
 }
