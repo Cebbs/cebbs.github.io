@@ -21,12 +21,11 @@
 		<div id="more-details" class="container">
                         <h2>Some more details before you begin...</h2>
                         <div class="form-group">
-                        <label for="inputRoom">Enter your name:</label>
-                                <input id="your-name">
+                                <input id="your-name" class="form-control input-lg" placeholder="Enter Your Name">
                         </div>
-                        <div class="form-group">
-                        <label for="inputRoom">Size limit:</label>
-                                <input id="room-size">
+                        <div class="form-inline">
+                        <label for="inputRoom" style="vertical-align:sub;">Size limit:</label>
+                                <input class="form-control input-sm" id="room-size">
                         </div>
 
                         <div class="checkbox">
@@ -35,7 +34,7 @@
                         </label>
                         </div>
 
-                        <button class="btn btn-default" type="submit" id="home-submit" onclick="moreDetails()">OK!</button>
+                        <button class="btn btn-lg" type="submit" id="home-submit" onclick="moreDetails()">OK!</button>
                 </div>
 	</body>
 </html>

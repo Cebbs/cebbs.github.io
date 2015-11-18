@@ -64,12 +64,13 @@ body {
 
 #everything-else {
 	height: 85vh;
-	border-style: solid;
+	border-style: none;
 }
 
 #chat-box{
 	position: relative;
-	height: 85vh;
+	margin-top: 8.5vh;
+	height: 69vh;
 	border-style: solid;
 }
 
@@ -89,6 +90,7 @@ body {
 }
 
 #song-queue {
+	margin-top: 1vh;
 	position: relative;
 	height: 25%;
 	border-style: solid; 
@@ -141,4 +143,8 @@ body {
 	position: absolute;
 	left: 0;
 	bottom: 0;
+}
+
+#admin {
+	vertical-align:middle;
 }
