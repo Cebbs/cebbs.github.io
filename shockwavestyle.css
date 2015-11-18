@@ -71,6 +71,7 @@
 }
 
 #skip-box {
+	display: none;
 	border-style: solid;
 	height: 50%;
 	width: 30%;
@@ -84,6 +85,7 @@
 }
 
 #skip-line {
+	display: none;
 	margin-left: 0%;
 	border-style: solid;
 	width: .5px;

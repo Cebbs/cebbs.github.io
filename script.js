@@ -47,12 +47,16 @@ function skipVote() {
 		skipCount++;
 		var temp = (skipCount / roomSize) * 100;
 		document.getElementById('skip-line').style.marginLeft = temp + "%";
+		document.getElementById('skip-box').style.display = "block";
+		document.getElementById('skip-line').style.display = "block";
 	}
 	else {
 		skipCount++;
 		if (skipCount > roomSize / 2) {
 			// skip this song
 			skipCount = 0;
+			document.getElementById('skip-box').style.display = "none";
+			document.getElementById('skip-line').style.display = "none";
 			document.getElementById('skip-line').style.marginLeft = "0%";
 		}
 		else {
