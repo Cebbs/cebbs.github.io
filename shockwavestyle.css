@@ -64,6 +64,14 @@
 }
 
 #song-queue {
+	position: relative;
 	height: 25%;
 	border-style: solid; 
+}
+
+#add-song-button {
+	float: right;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
