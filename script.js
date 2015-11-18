@@ -6,13 +6,13 @@ var admin;
 function enterRoomName() {
 	roomName=document.getElementById('room-name').value;
 	landing = document.getElementById("landing");
-	moreDetails = document.getElementById("more-details");
+	moreDetail = document.getElementById("more-details");
 	if(!validateForm(roomName)) {
 		alert("Enter a name bud.");
 	}
 	else {
 		landing.style.display = "none";
-		moreDetails.style.display = "block";
+		moreDetail.style.display = "block";
 	}
 }
 
@@ -28,7 +28,7 @@ function moreDetails() {
 		alert("Enter a name bud.");
 	}
 	else {
-		//open the next window
+		window.open("player.html", '_self', false);//open the next window
 	}
 
 }
