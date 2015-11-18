@@ -1,7 +1,8 @@
 var roomName;
 var userName;
-var roomSize;
+var roomSize = 10;
 var admin;
+var skipCount = 0;
 
 function enterRoomName() {
 	roomName=document.getElementById("room-name").value;
@@ -41,4 +42,25 @@ function validateForm(input) {
 // Displays roomName
 function displayRoomName() {
     document.getElementById("room-name-display").innerHTML = "RYAN"; //this.roomName;
+
+// initiates, continues, or concludes a skip vote
+function skipVote() {
+	
+	if (skipCount == 0) {
+		skipCount++;
+		var temp = (skipCount / roomSize) * 100;
+		document.getElementById('skip-line').style.marginLeft = temp + "%";
+	}
+	else {
+		skipCount++;
+		if (skipCount > roomSize / 2) {
+			// skip this song
+			skipCount = 0;
+			document.getElementById('skip-line').style.marginLeft = "0%";
+		}
+		else {
+			var temp = (skipCount / roomSize) * 100;
+			document.getElementById('skip-line').style.marginLeft = temp + "%";
+		}
+	}
 }

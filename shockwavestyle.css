@@ -54,11 +54,38 @@
 	border-style: solid;
 }
 
+#top-div {
+	height: 10%;
+	border-style: solid;
+	position: relative;
+}
+
 #music-player {
-	height: 40%;
+	height: 55%;
+	border-style: solid;
 }
 
 #song-queue {
-	height: 50%;
+	height: 25%;
 	border-style: solid; 
+}
+
+#skip-box {
+	border-style: solid;
+	height: 50%;
+	width: 30%;
+}
+
+#skip-button {
+	position: absolute;
+	width: 10%;
+	right: 0;
+	bottom: 0;
+}
+
+#skip-line {
+	margin-left: 0%;
+	border-style: solid;
+	width: .5px;
+	height: 100%;
 }
