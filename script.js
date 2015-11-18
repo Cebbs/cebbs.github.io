@@ -42,6 +42,7 @@ function validateForm(input) {
 // Displays roomName
 function displayRoomName() {
     document.getElementById("room-name-display").innerHTML = "RYAN"; //this.roomName;
+}
 
 // initiates, continues, or concludes a skip vote
 function skipVote() {
