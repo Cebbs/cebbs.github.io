@@ -4,7 +4,7 @@ var roomSize;
 var admin;
 
 function enterRoomName() {
-	roomName=document.getElementById('room-name').value;
+	roomName=document.getElementById("room-name").value;
 	landing = document.getElementById("landing");
 	moreDetail = document.getElementById("more-details");
 	if(!validateForm(roomName)) {
@@ -36,4 +36,9 @@ function moreDetails() {
 //checks to ensure a value has been entered
 function validateForm(input) {
 	return !(input == null || input == "");
+}
+
+// Displays roomName
+function displayRoomName() {
+    document.getElementById("room-name-display").innerHTML = "RYAN"; //this.roomName;
 }

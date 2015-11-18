@@ -6,20 +6,23 @@
 		<script src="script.js"></script>
 		<title>Shockwave</title>
 	</head>
-	<body>
+	<body onload="displayRoomName();">
 		<div id="room-page" class="container">
 			<div class="row">
 				<div class="col-lg-10" id="everything-else">
-					<div id="room-name-display" class="text-center"> 
-					</div>
-					<div id="skip" class="pull-right">
+					<div id="top-div">	
+						<div id="room-name-display" class="text-center"> 
+						</div>
+						<div id="skip" class="pull-right">
 						skip
+						</div>
 					</div>
 					<div id="music-player">
 					</div>
 					<div id="song-queue">
+						<button class="btn btn-default" type="submit" id="add-song-button" onchange="songShit()"><input type="file" id="file-upload" multiple accept="audio/*"></button>
+						<!--<input type="file" id="file-upload" onchange="songShit()" accept="audio/*">-->
 					</div>
-					<input type="file" accept="audio/*">	
 				</div>
 				<div class="col-lg-2" id="chat-box">
 					<div id="the-chat">
