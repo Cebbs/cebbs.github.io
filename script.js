@@ -1,5 +1,5 @@
 var roomName = "Test Room";
-var userName;
+var userName = "User 1";
 var roomSize = 10;
 var admin;
 var skipCount = 0;
@@ -130,7 +130,7 @@ function skipVote() {
 	if (skipCount == 0) {
 		skipCount++;
 		var temp = (skipCount / roomSize) * 100;
-		document.getElementById('skip-line').style.marginLeft = temp + "%";
+		document.getElementById('skip-line').style.width = temp + "%";
 		document.getElementById('skip-box').style.display = "block";
 		document.getElementById('skip-line').style.display = "block";
 	}
@@ -141,11 +141,11 @@ function skipVote() {
 			skipCount = 0;
 			document.getElementById('skip-box').style.display = "none";
 			document.getElementById('skip-line').style.display = "none";
-			document.getElementById('skip-line').style.marginLeft = "0%";
+			document.getElementById('skip-line').style.width = "0%";
 		}
 		else {
 			var temp = (skipCount / roomSize) * 100;
-			document.getElementById('skip-line').style.marginLeft = temp + "%";
+			document.getElementById('skip-line').style.width = temp + "%";
 		}
 	}
 }
@@ -175,6 +175,7 @@ function toggleMenuOff() {
 function chatTextSubmit() {
 	var chatText = document.getElementById('text-input').value;
 	var chatBox = document.getElementById("the-chat");
+	var chatText = userName + ":" + document.getElementById('text-input').value;
 	chatText.concat("<br>");
 	displayChatBoxText(chatText);
 	document.getElementById('text-input').value = "";

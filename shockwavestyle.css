@@ -104,6 +104,30 @@ body {
 	box-shadow: 0 0 10px #3D57A3;
 }
 
+<<<<<<< HEAD
+=======
+#text-input {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+}
+
+#text-input:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
+#add-from-link {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+}
+
+#add-from-link:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
 #everything-else {
 	height: 85vh;
 	border-style: none;
@@ -155,7 +179,7 @@ body {
 }
 
 #add-song-button {
-
+	
 }
 
 #add-from-link {
@@ -170,6 +194,7 @@ body {
 }
 
 #skip-box {
+	background-color: #FF0000;
 	display: none;
 	border-style: solid;
 	position: absolute;
@@ -189,10 +214,10 @@ body {
 }
 
 #skip-line {
+	background-color: #00FF00;
 	display: none;
-	margin-left: 0%;
-	border-style: solid;
-	width: .5px;
+	border-style: none;
+	width: 0%;
 	height: 100%;
 }
 
