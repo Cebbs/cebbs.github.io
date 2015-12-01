@@ -3,6 +3,9 @@ var userName;
 var roomSize = 10;
 var admin;
 var skipCount = 0;
+var menuState = 0;
+
+var menu;
 
 var currentSong;
 var songQueue;
@@ -51,6 +54,10 @@ function validateForm(input) {
 // Displays roomName
 function displayRoomName() {
     document.getElementById("room-name-display").innerHTML = roomName; //this.roomName;
+    document.getElementById("chat-room-name").innerHTML = roomName;
+    menu = document.querySelector("#member-list");
+    activeMenu = "member-list--active";
+    document.addEventListener("click", clickListener);
 }
 
 //test function
@@ -143,11 +150,31 @@ function skipVote() {
 	}
 }
 
+////////////// SHOW MEMBER LIST //////////////////////////
+function showMemberList() {
+	console.log("pls");
+	if(menuState === 0) {
+		toggleMenuOn(); 
+	}
+	else if (menuState === 1) {
+		toggleMenuOff();
+    }
+}
 
+function toggleMenuOn() {
+	menuState = 1;
+    menu.style.display = "block";
+}
+
+function toggleMenuOff() {
+  	menuState = 0;
+  	menu.style.display = "none";
+}
 
 // Sends text from textbox to chatbox
 function chatTextSubmit() {
 	var chatText = document.getElementById('text-input').value;
+	var chatBox = document.getElementById("the-chat");
 	chatText.concat("<br>");
 	displayChatBoxText(chatText);
 	document.getElementById('text-input').value = "";
@@ -160,8 +187,13 @@ function displayChatBoxText(chatText) {
 	var node = document.createTextNode(chatText);
 	para.appendChild(node);
 	chatBox.appendChild(para);
+	scrollChat();
 }
 
+function scrollChat() {
+	var elem = document.getElementById('the-chat');
+    elem.scrollTop = elem.scrollHeight;
+}
 
 // if enter pressed, submit text
 function enterSubmit() {

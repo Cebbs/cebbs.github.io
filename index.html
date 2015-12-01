@@ -14,27 +14,31 @@
    				<input type="text" class="form-control input-lg" id="room-name" placeholder="Enter Room Name">
  			</div>
 
-			<button class="btn btn-lg" type="submit" id="home-submit" onclick="enterRoomName()">Create
+			<button class="btn btn-lg" type="submit" id="home-submit" onclick="enterRoomName()">Next
             </button>
 		</div>
 		
 		<div id="more-details" class="container">
-                        <h2>Some more details before you begin...</h2>
+                        <h2>Some more details before you begin...*</h2>
                         <div class="form-group">
                                 <input id="your-name" class="form-control input-lg" placeholder="Enter Your Name">
                         </div>
                         <div class="form-inline">
-                        <label for="inputRoom" style="vertical-align:sub;">Size limit:</label>
+                        <label for="inputRoom" style="vertical-align:sub;">How many other people can be in this room at once?:</label>
                                 <input class="form-control input-sm" id="room-size">
+                                <p>(Leave blank for no size limit)</p>
                         </div>
 
-                        <div class="checkbox">
+                        <div class="checkbox" id="admin-check">
                         <label>
                                 <input type="checkbox" id="admin">Only let me select songs
                         </label>
                         </div>
 
-                        <button class="btn btn-lg" type="submit" id="home-submit" onclick="moreDetails()">OK!</button>
+                        <button class="btn btn-lg" type="submit" id="home-submit" onclick="moreDetails()">Create!</button>
+                        <div id="the-asterisk">
+                            <p>* Required!</p>
+                        </div>
                 </div>
 	</body>
 </html>
