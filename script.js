@@ -7,7 +7,7 @@ var menuState = 0;
 
 var menu;
 
-var currentSong;
+var currentSong = null;
 var songQueue;
 var queueSpot;
 var audio;
@@ -68,9 +68,11 @@ function displayRoomName() {
     document.addEventListener("click", clickListener);
 }
 
+var songs = [];
+
 //test function
 function uploadSongs() {
-	if(cantClick > 0) {
+	if(cantClick > 100) {
 		alert("You don't want to upload twice.");
 	}
 	else {
@@ -88,10 +90,16 @@ function uploadSongs() {
 		var txt;
 		var id;
 		var idCount = 0;
-		currentSong = x.files[0];
-		songQueue = x.files;
+		songs.push.apply(songs,x.files);
+		var i = 0;
+                if (currentSong == null) {
+                        i = 1;
+			currentSong = songs[0];
+			startPlayer();
+		}
+		songQueue = songs;
 		console.log(songQueue);
-	    for (var i = 1; i < x.files.length; i++) {
+	    for (i; i < x.files.length; i++) {
 	        var file = x.files[i];
 	        if ('name' in file) {
 	        	songDiv = document.createElement("div");
@@ -104,8 +112,8 @@ function uploadSongs() {
 	            songDiv.id = id;
 	            div.appendChild(songDiv);
 	        }
+		x.files = [];
 	    }
-	    startPlayer();
 	    setInterval(function(){ nextSong() }, 1500);//runs every...something		
 	}
 }
