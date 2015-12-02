@@ -1,7 +1,7 @@
 var roomName = "Test Room";
 var userName = "User 1";
 var roomSize = 10;
-var roomCount = 10;
+var roomCount = 11;
 var admin;
 var skipCount = 0;
 var menuState = 0;
@@ -9,6 +9,7 @@ var menuState = 0;
 var menu;
 
 var currentSong = null;
+var songs = [];
 var songQueue;
 var queueSpot;
 var audio;
@@ -70,7 +71,7 @@ function displayRoomName() {
     document.addEventListener("click", clickListener);
 }
 
-var songs = [];
+
 
 //test function
 function uploadSongs() {
@@ -138,10 +139,11 @@ function startPlayer() {
  	player.innerHTML = uploadControl;
 }
 
-function nextSong() {
+function nextSong(skipParam) {
 	var currentTime = audio.currentTime;
 	var nextId = document.getElementById("queue-" + idToDelete)
-	if(currentTime >= audio.duration && queueSpot <= length) {
+	if(currentTime >= audio.duration && queueSpot <= length
+		|| skipParam == 1) {
 		//songQueue[0] = null;
 		queueSpot += 1;
 		currentSong = songQueue[queueSpot];
@@ -158,7 +160,7 @@ function skipVote() {
 	var skipLine = document.getElementById('skip-line');
 	var skipButton = document.getElementById('skip-button');
 	var skipText = document.getElementById('skip-text');
-	var skipLimit = (roomCount / 2);
+	var skipLimit = Math.floor(roomCount / 2);
 	
 	if (skipCount == 0) {
 		skipCount++;
