@@ -223,6 +223,12 @@ body {
 	height: 100%;
 }
 
+#skip-text {
+	display: none;
+	position: absolute;
+	right: 0;
+}
+
 /* chat */
 #exit-button {
 	float:right;
