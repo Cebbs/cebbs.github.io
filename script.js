@@ -1,6 +1,7 @@
 var roomName = "Test Room";
 var userName = "User 1";
 var roomSize = 10;
+var roomCount = 10;
 var admin;
 var skipCount = 0;
 var menuState = 0;
@@ -14,7 +15,8 @@ var audio;
 
 var idToDelete;
 
-var cantClick;
+var cantClickFile;
+var cantClickLink;
 
 var landing;
 var moreDetail;
@@ -72,11 +74,11 @@ var songs = [];
 
 //test function
 function uploadSongs() {
-	if(cantClick > 100) {
+	if(cantClickFile > 10) {
 		alert("You don't want to upload twice.");
 	}
 	else {
-		cantClick = 1;
+		cantClickFile = 1;
 		document.getElementById("file-upload").readOnly = true;
 		queueSpot = 0;
 		idToDelete = 0;
@@ -119,11 +121,21 @@ function uploadSongs() {
 }
 
 function startPlayer() {
+	/*
 	document.querySelector('audio').src = URL.createObjectURL(currentSong);
 	audio = document.getElementById("uploaded-song");
 	audio.play();
 	var player = document.getElementById("music-player");
 	player.innerHTML = currentSong.name;
+	*/
+
+	document.querySelector('audio').src = URL.createObjectURL(currentSong);
+ 	audio = document.getElementById("uploaded-song");
+ 	audio.play();
+ 	var player = document.getElementById("music-player");
+	var uploadControl = currentSong.name;
+ 	uploadControl = uploadControl.split('.')[uploadControl.split('.').length - 2];
+ 	player.innerHTML = uploadControl;
 }
 
 function nextSong() {
@@ -142,26 +154,42 @@ function nextSong() {
 
 // initiates, continues, or concludes a skip vote
 function skipVote() {
+	var skipBox = document.getElementById('skip-box');
+	var skipLine = document.getElementById('skip-line');
+	var skipButton = document.getElementById('skip-button');
+	var skipText = document.getElementById('skip-text');
+	var skipLimit = (roomCount / 2);
 	
 	if (skipCount == 0) {
 		skipCount++;
-		var temp = (skipCount / roomSize) * 100;
-		document.getElementById('skip-line').style.width = temp + "%";
-		document.getElementById('skip-box').style.display = "block";
-		document.getElementById('skip-line').style.display = "block";
+		var temp = (skipCount / roomCount) * 100;
+
+		skipBox.style.display = "block";
+		skipLine.style.width = temp + "%";
+		skipLine.style.display = "block";
+		skipButton.style.display = "none";
+		skipText.style.display = "block";
+		skipText.innerHTML = skipCount + "/" + (skipLimit + 1) + " votes needed";
 	}
 	else {
 		skipCount++;
-		if (skipCount > roomSize / 2) {
+		skipText.innerHTML = skipCount + "/" + (skipLimit + 1) + " votes needed";
+		if (skipCount > skipLimit) {
 			// skip this song
 			skipCount = 0;
-			document.getElementById('skip-box').style.display = "none";
-			document.getElementById('skip-line').style.display = "none";
-			document.getElementById('skip-line').style.width = "0%";
+
+			skipBox.style.display = "none";
+			skipLine.style.display = "none";
+			skipLine.style.width = "0%";
+			skipButton.style.display = "block";
+			skipText.style.display = "none";
 		}
 		else {
-			var temp = (skipCount / roomSize) * 100;
-			document.getElementById('skip-line').style.width = temp + "%";
+			var temp = (skipCount / roomCount) * 100;
+
+			skipLine.style.width = temp + "%";
+			skipButton.style.display = "none";
+			skipText.style.display = "block";
 		}
 	}
 }

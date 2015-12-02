@@ -18,9 +18,12 @@
 							<div id="skip-line" class="pull-left">
 							</div>
 						</div>
-						<button class="btn btn-default" id="skip-button" name="skip"  onclick="skipVote()">
-						Skip
-						</button>
+						<div id="skip-button-box">
+							<p id="skip-text"></p>
+							<button class="btn btn-default" id="skip-button" name="skip"  onclick="skipVote()">
+							Skip
+							</button>
+						</div>
 					</div>
 					<div id="music-player">
 						<div id="now-playing-label">
@@ -43,9 +46,9 @@
 					<audio id="uploaded-song"></audio>
 				</div>
 				<div id="above-chat">
-                                                <button class="btn btn-default" id="exit-button" name="ExitRoom"  onClick="location.href='index.html'">
-                                                        Exit Room
-                                                </button>
+					<button class="btn btn-default" id="exit-button" name="ExitRoom"  onClick="location.href='index.html'">
+						Exit Room
+					</button>
 				</div>
 				<div class="col-lg-3" id="chat-box">
 					<div id="chat-room-header">
@@ -65,7 +68,7 @@
 						<p id="chat-label">Welcome to the chat!</p>
 					</div>
 					<div id="text-box">
-						<input id="text-input" onkeyup="enterSubmit()">
+						<textarea id="text-input" rows="10" cols="20" onkeyup="enterSubmit()"> </textarea>
 					</div>
 					<button class="btn btn-default" type="submit" id="chat-text-submit" 
 						onClick="chatTextSubmit()">
