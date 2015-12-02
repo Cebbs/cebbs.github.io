@@ -16,6 +16,9 @@ var idToDelete;
 
 var cantClick;
 
+var landing;
+var moreDetail;
+
 function enterRoomName() {
 	roomName = document.getElementById("room-name").value;
 	landing = document.getElementById("landing");
@@ -27,6 +30,11 @@ function enterRoomName() {
 		landing.style.display = "none";
 		moreDetail.style.display = "block";
 	}
+}
+
+function lessDetails() {
+	landing.style.display = "block";
+	moreDetail.style.display = "none";
 }
 
 function moreDetails() {
