@@ -14,7 +14,8 @@ var audio;
 
 var idToDelete;
 
-var cantClick;
+var cantClickFile;
+var cantClickLink;
 
 var landing;
 var moreDetail;
@@ -70,11 +71,11 @@ function displayRoomName() {
 
 //test function
 function uploadSongs() {
-	if(cantClick > 0) {
+	if(cantClickFile > 1) {
 		alert("You don't want to upload twice.");
 	}
 	else {
-		cantClick = 1;
+		cantClickFile = 1;
 		document.getElementById("file-upload").readOnly = true;
 		queueSpot = 0;
 		idToDelete = 0;
@@ -111,11 +112,21 @@ function uploadSongs() {
 }
 
 function startPlayer() {
+	/*
 	document.querySelector('audio').src = URL.createObjectURL(currentSong);
 	audio = document.getElementById("uploaded-song");
 	audio.play();
 	var player = document.getElementById("music-player");
 	player.innerHTML = currentSong.name;
+	*/
+
+	document.querySelector('audio').src = URL.createObjectURL(currentSong);
+ 	audio = document.getElementById("uploaded-song");
+ 	audio.play();
+ 	var player = document.getElementById("music-player");
+	var uploadControl = currentSong.name;
+ 	uploadControl = uploadControl.split('.')[uploadControl.split('.').length - 2];
+ 	player.innerHTML = uploadControl;
 }
 
 function nextSong() {

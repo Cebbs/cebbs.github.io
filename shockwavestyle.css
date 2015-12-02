@@ -145,6 +145,8 @@ body {
 
 #music-player {
 	height: 50%;
+	border-top: solid;
+	overflow-y: auto;
 }
 
 #now-playing-label {
@@ -239,6 +241,7 @@ body {
 #the-chat {	
 	overflow-y: auto;
 	height: 80%;
+	word-wrap: break-word;
 }
 
 #chat-text-submit {
