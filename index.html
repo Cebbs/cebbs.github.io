@@ -7,35 +7,40 @@
 		<title>Shockwave</title>
 	</head>
 	<body>
-		<div id="landing" class="container text-center">
-			<h1>Shockwa.bro</h1>
+		<div id="landing" class="container text-center" >
+			<h1>Shockwa.ve</h1>
+            <h3>The Live Music Sharing Website</h3>
 
 			<div class="form-group">
-    			<label for="inputRoom">Create a room:</label>
-   				<input id="room-name">
+   				<input type="text" class="form-control input-lg" id="room-name" placeholder="Enter Room Name" onkeyup="if (event.keyCode == 13) { enterRoomName(); }">
  			</div>
 
-			<button class="btn btn-default" type="submit" id="home-submit" onclick="enterRoomName()">pls?</button>
+			<button class="btn btn-lg" type="submit" id="home-submit" onclick="enterRoomName()">Next
+            </button>
 		</div>
 		
 		<div id="more-details" class="container">
-                        <h2>Some more details before you begin...</h2>
+                        <h2>Some more details before you begin...*</h2>
                         <div class="form-group">
-                        <label for="inputRoom">Enter your name:</label>
-                                <input id="your-name">
+                                <input id="your-name" class="form-control input-lg" placeholder="Enter Your Name">
                         </div>
-                        <div class="form-group">
-                        <label for="inputRoom">Size limit:</label>
-                                <input id="room-size">
+                        <div class="form-inline">
+                        <label for="inputRoom" style="vertical-align:sub;">How many other people can be in this room at once?:</label>
+                                <input class="form-control input-sm" id="room-size">
+                                <p>(Leave blank for no size limit)</p>
                         </div>
 
-                        <div class="checkbox">
+                        <div class="checkbox" id="admin-check">
                         <label>
                                 <input type="checkbox" id="admin">Only let me select songs
                         </label>
                         </div>
 
-                        <button class="btn btn-default" type="submit" id="home-submit" onclick="moreDetails()">OK!</button>
+			<button class="btn btn-lg" type="cancel" id="home-cancel" onclick="lessDetails()">Cancel</button>
+                        <button class="btn btn-lg" type="submit" id="home-submit" onclick="moreDetails()">Create!</button>
+                        <div id="the-asterisk">
+                            <p>* Required!</p>
+                        </div>
                 </div>
 	</body>
 </html>

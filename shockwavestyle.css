@@ -1,3 +1,8 @@
+body {
+	background-color: #E5E4E2;
+	color: #3D57A3;
+}
+
 #landing {
 	padding-top: 17vh;
 	width: 70vh;
@@ -19,6 +24,8 @@
 }
 
 #home-submit {
+	background-color: #3D57A3;
+	color: #E5E4E2;
 	float: right;
 }
 
@@ -37,54 +44,169 @@
 }
 
 #room-size {
-	width: 5vh;
+	width: 10vh;
+	height: 5vh;
+	font-weight: bold;
+	font-size: 3vh;
+}
+
+.right {
+	float: right;
+}
+
+#the-asterisk {
+	padding-top: 10vh;
+	font-weight: bold;
+}
+
+#admin {
+	vertical-align:middle;
+}
+
+#admin-check {
+	padding-top: 3vh;
 }
 
 #room-page {
 	margin-top: 5vh;
 }
 
-#everything-else {
-	height: 85vh;
-	border-style: solid;
+#room-name {
+	border: 2px solid #dadada;
+	border-radius: 7px;
 }
 
-#chat-box{
+#room-name:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
+#your-name {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+}
+
+#your-name:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
+#room-size {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+}
+
+#room-size:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
+<<<<<<< HEAD
+=======
+#text-input {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+}
+
+#text-input:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
+#add-from-link {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+}
+
+#add-from-link:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
+#everything-else {
 	height: 85vh;
-	border-style: solid;
+	border-style: none;
 }
 
 #top-div {
 	height: 10%;
-	border-style: solid;
+	border-style: none;
 	position: relative;
+}
+
+#room-name-display {
+	font-size: 200%;
 }
 
 #music-player {
-	height: 55%;
-	border-style: solid;
+	height: 50%;
 }
 
+#now-playing-label {
+	font-size: 5vh;
+	display: inline;
+	padding: 1vh;
+	margin-left: 3vh;
+	border-left: solid;
+	border-right: solid;
+	border-bottom: solid;
+	background: rgba(77, 166, 255, 0.7)
+}
+
+/*right now i have a border on top of this. we can get rid of this if we shade music-player a different color*/
 #song-queue {
+	margin-top: 1vh;
 	position: relative;
-	height: 25%;
-	border-style: solid; 
+	height: 30%;
+	border-top: solid; 
+	overflow-y: auto;
+}
+
+#song-queue-label {
+	font-size: 3vh;
+	display: inline;
+	padding: 1vh;
+	margin-left: 3vh;
+	border-left: solid;
+	border-right: solid;
+	border-bottom: solid;
+	background: rgba(77, 166, 255, 0.7)
 }
 
 #add-song-button {
-	float: right;
-	position: absolute;
-	right: 0;
-	bottom: 0;
+	
+}
+
+#add-from-link {
+	width: 30%;
+	display: inline;
+}
+
+#link-submit {
+	background-color: #3D57A3;
+	color: #E5E4E2;
+	display: inline;
 }
 
 #skip-box {
+	background-color: #FF0000;
+	display: none;
 	border-style: solid;
+	position: absolute;
+	right: 0;
+	top: 0;
 	height: 50%;
 	width: 30%;
 }
 
 #skip-button {
+	background-color: #3D57A3;
+	color: #E5E4E2;
 	position: absolute;
 	width: 10%;
 	right: 0;
@@ -92,8 +214,101 @@
 }
 
 #skip-line {
-	margin-left: 0%;
-	border-style: solid;
-	width: .5px;
+	background-color: #00FF00;
+	display: none;
+	border-style: none;
+	width: 0%;
 	height: 100%;
 }
+
+/* chat */
+#chat-box{
+	position: relative;
+	margin-top: 8.5vh;
+	height: 80vh;
+	border-style: solid;
+}
+
+#the-chat {	
+	overflow-y: auto;
+	height: 80%;
+}
+
+#chat-text-submit {
+	background-color: #3D57A3;
+	color: #E5E4E2;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#chat-room-header {
+	padding: 2.5vh;
+	border-bottom: solid;
+	border-bottom-width: 2px;
+}
+
+#chat-room-name {
+	font-weight: bold;
+}
+
+/* the member list */
+#view-members-button {
+	float: left;
+}
+
+.member-list {
+ 	display: none;
+	position: absolute;
+  	z-index: 10;
+  	padding: 12px 0;
+  	width: 240px;
+  	background-color: #fff;
+  	border: solid 1px #dfdfdf;
+  	box-shadow: 1px 1px 2px #cfcfcf;
+}
+
+.members {
+
+}
+
+.member-list--active {
+  	display: block;
+}
+
+.member-list__items {
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+}
+
+.member-list__item {
+  	display: block;
+  	margin-bottom: 4px;
+}
+
+.member-list__item:last-child {
+ 	margin-bottom: 0;
+}
+
+#text-box {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 75%;
+}
+
+#text-input {
+	border: 2px solid #dadada;
+	border-radius: 7px;
+	width: 100%;
+	height: 8vh;
+}
+
+#text-input:focus {
+	outline: none;
+	border-color: #3D57A3;
+	box-shadow: 0 0 10px #3D57A3;
+}
+
+
