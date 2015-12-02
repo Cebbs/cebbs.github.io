@@ -9,9 +9,10 @@
 	<body>
 		<div id="landing" class="container text-center" >
 			<h1>Shockwa.ve</h1>
+            <h3>The Live Music Sharing Website</h3>
 
 			<div class="form-group">
-   				<input type="text" class="form-control input-lg" id="room-name" placeholder="Enter Room Name">
+   				<input type="text" class="form-control input-lg" id="room-name" placeholder="Enter Room Name" onkeyup="if (event.keyCode == 13) { enterRoomName(); }">
  			</div>
 
 			<button class="btn btn-lg" type="submit" id="home-submit" onclick="enterRoomName()">Next
