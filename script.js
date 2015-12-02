@@ -133,7 +133,7 @@ function startPlayer() {
 	document.querySelector('audio').src = URL.createObjectURL(currentSong);
  	audio = document.getElementById("uploaded-song");
  	audio.play();
- 	var player = document.getElementById("music-player");
+ 	var player = document.getElementById("now-playing");
 	var uploadControl = currentSong.name;
  	uploadControl = uploadControl.split('.')[uploadControl.split('.').length - 2];
  	player.innerHTML = uploadControl;
@@ -264,7 +264,7 @@ function addLink() {
 		document.querySelector('audio').src = "The Morning.mp3";
 		audio = document.getElementById("uploaded-song");
 		audio.play();
-		var player = document.getElementById("music-player");
+		var player = document.getElementById("now-playing");
 		player.innerHTML = "The Weeknd - The Morning";
 		cantClick++;
 		document.getElementById('add-from-link').value = "";
