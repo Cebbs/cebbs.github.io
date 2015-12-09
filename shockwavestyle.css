@@ -196,7 +196,7 @@ body {
 }
 
 #skip-box {
-	background-color: #FF0000;
+	background-color: #E5E4E2;
 	display: none;
 	border-style: solid;
 	position: absolute;
@@ -216,7 +216,7 @@ body {
 }
 
 #skip-line {
-	background-color: #00FF00;
+	background-color: #3D57A3;
 	display: none;
 	border-style: none;
 	width: 0%;
