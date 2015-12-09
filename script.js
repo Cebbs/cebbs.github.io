@@ -251,7 +251,7 @@ function enterSubmit() {
 
 function addLink() {
 	var theLink = document.getElementById("add-from-link").value;
-	if(cantClick > 0) {
+	if(cantClickLink > 0) {
 		alert("You don't want to upload twice.");
 	}
 	else if(!validateForm(theLink)) {
@@ -266,7 +266,7 @@ function addLink() {
 		audio.play();
 		var player = document.getElementById("now-playing");
 		player.innerHTML = "The Weeknd - The Morning";
-		cantClick++;
+		cantClickLink++;
 		document.getElementById('add-from-link').value = "";
 	}
 }
